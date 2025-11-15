@@ -33,7 +33,7 @@ class ScanCompatibility extends Command
         }
 
         if ($this->option('fix')) {
-            $this->info("🔧 Running autofix...");
+            $this->info("->Running autofix...");
             $fixed = $scanner->autoFix();
             foreach ($fixed as $file) {
                 $this->line("Fixed: {$file}");
