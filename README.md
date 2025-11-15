@@ -11,22 +11,22 @@ potential issues when upgrading from **PHP 8.4 → PHP 8.5**, including:
 - Fully configurable behavior
 
   
-🚀 Instalare
+🚀 Instalation
 ```
 composer require nplesa/85tracker
 ```
 
-Publicare config:
+Publish config:
 ```
 php artisan vendor:publish --tag=tracker-config
 ```
-🧪 Testare
+🧪 Test
 ```
 php artisan tracker:scan
 php artisan tracker:scan --fix
 ```
 
-Din cod:
+From code:
 ```
 php85scanner()->scanProject();
 php85scanner()->autoFix();
