@@ -24,7 +24,7 @@ class Php85TrackerServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \Nplesa\Tracker\Commands\ScanCompatibility::class,
+                \nplesa\Tracker\Commands\ScanCompatibility::class,
             ]);
         }
     }
