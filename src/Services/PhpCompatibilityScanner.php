@@ -48,7 +48,7 @@ class PhpCompatibilityScanner
 
     public function autoFix(): array
     {
-        $fixed = []; // array pentru fișierele modificate
+        $fixed = [];
 
         $iterator = new \RecursiveIteratorIterator(
             new \RecursiveDirectoryIterator(base_path())
@@ -68,11 +68,10 @@ class PhpCompatibilityScanner
 
                 if ($content !== $original) {
                     file_put_contents($file->getPathname(), $content);
-                    // Adăugăm calea fișierului în array-ul de modificate
                     $fixed[] = $file->getPathname();
                 }
             }
         }
-        return $fixed; // întotdeauna returnează un array
+        return $fixed;
     }
 }
