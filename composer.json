@@ -1,0 +1,29 @@
+{
+    "name": "nplesa/85tracker",
+    "description": "PHP 8.5 compatibility tracker for Laravel 12",
+    "type": "library",
+    "author" : {
+        "name" : "Nicolae Plesa",
+        "email" : "nicu.plesa@gmail.com"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "nplesa\\Tracker\\": "src/"
+        },
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "nplesa\\Tracker\\Php85TrackerServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.4|^8.5",
+        "illuminate/support": "^12.0"
+    }
+}
