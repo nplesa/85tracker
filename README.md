@@ -9,6 +9,7 @@ potential issues when upgrading from **PHP 8.4 → PHP 8.5**, including:
 - CLI tools for scanning and fixing issues
 - Developer-friendly helper utilities
 - Fully configurable behavior
+
   
 🚀 Instalare
 ```
