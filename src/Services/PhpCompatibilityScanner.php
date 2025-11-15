@@ -67,7 +67,7 @@ class PhpCompatibilityScanner
 
                 if ($content != $original) {
                     file_put_contents($file->getPathname(), $content);
-                    $fixed.append(file.getPathname());
+                    $fixed .= file_get_contents($file->getPathname());
                 }
             }
         }
