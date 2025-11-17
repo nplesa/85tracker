@@ -9,9 +9,7 @@ potential issues when upgrading from **PHP 8.4 → PHP 8.5**, including:
 - CLI tools for scanning and fixing issues
 - Developer-friendly helper utilities
 - Fully configurable behavior
-```
-Work in progress
-```
+
 1. Instalation
 ```
 composer require nplesa/85tracker
