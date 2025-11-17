@@ -1,7 +1,7 @@
-# nplesa/85tracker — PHP 8.5 Compatibility Tracker for Laravel 12
-`nplesa/85tracker` is a Laravel 12 package that scans your application for  
-potential issues when upgrading from **PHP 8.4 → PHP 8.5**, including:
+# nplesa/85tracker
 
+Laravel 12 package that scans your application for  
+potential issues when upgrading from **PHP 8.4 → PHP 8.5**, including:
 - Detection of deprecated functions
 - Auto-fixing deprecated usages
 - Checking missing PHP extensions
@@ -9,23 +9,23 @@ potential issues when upgrading from **PHP 8.4 → PHP 8.5**, including:
 - CLI tools for scanning and fixing issues
 - Developer-friendly helper utilities
 - Fully configurable behavior
-  
-🚀 Instalare
+
+1. Instalation
 ```
 composer require nplesa/85tracker
 ```
 
-Publicare config:
+2. Publish config:
 ```
 php artisan vendor:publish --tag=tracker-config
 ```
-🧪 Testare
+3. Test
 ```
 php artisan tracker:scan
 php artisan tracker:scan --fix
 ```
 
-Din cod:
+From code:
 ```
 php85scanner()->scanProject();
 php85scanner()->autoFix();
