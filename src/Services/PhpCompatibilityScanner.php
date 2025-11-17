@@ -6,13 +6,25 @@ class PhpCompatibilityScanner
 {
     protected array $deprecatedFunctions;
     protected array $requiredExtensions;
+    protected array $excludedFolders;
 
     public function __construct()
     {
-        $this->deprecatedFunctions = config('tracker.deprecated_functions', []);
-        $this->requiredExtensions = config('tracker.required_extensions', []);
+        $this->deprecatedFunctions  = config('tracker.deprecated_functions', []);
+        $this->requiredExtensions   = config('tracker.required_extensions', []);
+        $this->excludedFolders      = config('tracker.exclude_folders', []);
     }
 
+    private function shouldExclude(string $path): bool
+    {
+        foreach ($this->excludedFolders as $pattern) {
+            if (str_contains($path, DIRECTORY_SEPARATOR . $pattern)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
     public function scanProject(): array
     {
         $results = [];
@@ -21,6 +33,9 @@ class PhpCompatibilityScanner
         );
 
         foreach ($iterator as $file) {
+            if ($this->shouldExclude($file->getPathname())) {
+                continue;
+            }
             if ($file->isFile() && $file->getExtension() === 'php') {
                 $content = file_get_contents($file->getPathname());
 
@@ -55,6 +70,9 @@ class PhpCompatibilityScanner
         );
 
         foreach ($iterator as $file) {
+            if ($this->shouldExclude($file->getPathname())) {
+                continue;
+            }
             if ($file->isFile() && $file->getExtension() === 'php') {
                 $original = $content = file_get_contents($file->getPathname());
 

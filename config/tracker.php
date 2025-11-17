@@ -3,6 +3,12 @@
 return [
 
     'middleware_enabled' => false,
+    
+    'exclude_folders' => [
+        'vendor',
+        'database',
+        // 'bootstrap/cache',
+    ],
 
     'required_extensions' => [
         'intl',
